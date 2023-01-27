@@ -1,0 +1,17 @@
+
+f: () -> (ri : int = 0) = {
+    pred := :(e:_) -> bool = { return e == 1; };
+    ri = 42;
+    // "return;" is implicit"
+}
+
+g: () -> (ri : int) = {
+    ri = 0;
+    pred := :(e:_) -> bool = { return e == 1; };
+    ri = 42;
+    return;
+}
+
+main: ()->int = {
+    std::cout << f().ri + g().ri << "\n";
+}
